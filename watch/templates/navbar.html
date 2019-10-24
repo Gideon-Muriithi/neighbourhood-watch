@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse navbar-dark role=navigation scrolling-navbar navbar-expand fixed-top mb-2"
+    style="background-color: rgb(32, 87, 109)">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color: whitesmoke" href="#"> Neighbourhood Watch</a>
+        </div>
+
+        <div>
+            <button style="background-color: rgb(104, 104, 241)" class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a style="font-size: 13px; color: whitesmoke" href="{% url 'login' %}"><i class="mr-1 fa fa-lock" aria-hidden="true"></i>LOGIN</a>
+                    <a style="font-size: 13px; color: whitesmoke" class="ml-4" href="{% url 'register' %}"><i class="mr-1 fa fa-star" aria-hidden="true"></i>REGISTER</a>
+                </div>
+                <!-- Adding a search form -->
+            </div>
+        </div>
+    </div>
+</nav>
