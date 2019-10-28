@@ -3,6 +3,7 @@ from .forms import UserRegisterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm
+from .models import Business, Profile
 
 def index(request):
     title = 'Home'
@@ -35,3 +36,4 @@ def create_profile(request):
 
         form = ProfileForm()
     return render(request,'user/profile_form.html',{"form":form})
+
