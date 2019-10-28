@@ -27,3 +27,10 @@ class Profile(models.Model):
     def __str__(self):
         return self.name
 
+
+class Business(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.CharField(blank=True, max_length=30)
+    email = models.EmailField(max_length=70, blank=True)
+    business_owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    business_hood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, related_name='biz', null=True)
