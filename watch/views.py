@@ -144,4 +144,4 @@ def search_results(request):
 
     else:
         message = "Please enter a search term"
-        return render(request, 'search.html', {"message": message})
+    return render(request, 'search.html', {"message": message})

@@ -13,6 +13,7 @@ urlpatterns = [
     path('add/business/', views.add_business, name='add_business'),
     path('add/post/', views.add_post, name='add_post'),
     path('user/<username>', views.user_profile, name='user_profile'),
+    path('search_results/', views.search_results, name='search_results'),
 
 ]
 
