@@ -5,7 +5,11 @@ This is an app developed with django with the aim of getting a better understand
 This is a simple that allows user to create accounts and login to them with their credentials. Users can create profile based on neighbourhood they come from. The site also supports uploading of businesses and creating of posts. Logged in users are able to join different neighbourhoods to see posted businesses and different posts.
 
 # Set Up and Installations
-1. Prerequisites Ubuntu Software Python3.6 Postgres python virtualenv
+1. Prerequisites:
+
+    ######  i. Python3.6 
+     ###### ii. Postgres python 
+     #####  iii. virtualenv
 
 2. Clone the project repo by running <git clone https://github.com/Gideon-Muriithi/neighbourhood_watch>.
 
