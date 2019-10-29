@@ -2,7 +2,7 @@
 This is an app developed with django with the aim of getting a better understanding of django framework.
 
 # Description
-This is a simple that allows user to create accounts and login to them with their credentials. The site also supports uploading of projects one has done and their live links. Logged in users are able to view projects posted by other users on the home page of site and click on the project's image to view more detaials of the project, rate the projects based on design, content and usability and also make a review on a the projects.
+This is a simple that allows user to create accounts and login to them with their credentials. Users can create profile based on neighbourhood they come from. The site also supports uploading of businesses and creating of posts. Logged in users are able to join different neighbourhoods to see posted businesses and different posts.
 
 # Set Up and Installations
 1. Prerequisites Ubuntu Software Python3.6 Postgres python virtualenv
