@@ -4,13 +4,14 @@ import datetime as dt
 from django.utils import timezone
 
 class Neighbourhood(models.Model):
-    locality = models.CharField( max_length=30, default="e.g Nairobi, Thika, Ruiru etc")
-    name = models.CharField(max_length=30, default='Name')
-    occupants_count = models.IntegerField(default=0, blank=True)
+    locality = models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
+    occupants_count = models.IntegerField(blank=True)
     user_profile = models.ForeignKey(User, on_delete=models.CASCADE, related_name='hoods', blank=True, default=1)
     date = models.DateTimeField(default=timezone.now)
 
-    objects = models.Manager() 
+    def __str__(self):
+        return self.name
 
     @classmethod
     def search_neighborhood_by_name(cls, search_term):
@@ -23,7 +24,7 @@ class Neighbourhood(models.Model):
         return neighborhood
 
     @classmethod
-    def all_neighborhoods(cls):
+    def all_neighbourhoods(cls):
         neighborhoods = cls.objects.all()
         return neighborhoods
 
@@ -95,12 +96,12 @@ class Business(models.Model):
 
     @classmethod
     def get_hood_business(cls, business_hood):
-        businesses = Business.objects.filter(business_hood_pk=biz_hood)
+        businesses = Business.objects.filter(business_hood_pk=business_hood)
         return businesses
 
     @classmethod
     def get_profile_businesses(cls, profile):
-        businesses = Business.objects.filter(biz_owner__pk=profile)
+        businesses = Business.objects.filter(business_owner__pk=profile)
         return businesses
 
 class Join(models.Model):
@@ -109,3 +110,32 @@ class Join(models.Model):
 
     def __str__(self):
         return self.user_id
+
+class Post(models.Model):
+    name = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='images/', blank=True)
+    description = models.TextField(blank=True)
+    poster = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    post_hood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+    objects = models.Manager()
+
+    @classmethod
+    def search_post(cls, search_term):
+        posts = cls.objects.filter(name__icontains=search_term)
+        return posts
+
+    @classmethod
+    def get_hood_posts(cls, post_hood):
+        posts = Post.objects.filter(post_hood=id)
+        return posts
+
+    @classmethod
+    def search_by_name(cls, search_term):
+        posts = cls.objects.filter(name__icontains=search_term)
+        return posts
+
+    @classmethod
+    def all_posts(cls,id):
+        posts = Post.objects.all()
+        return posts
