@@ -33,8 +33,9 @@
                     </div>
                 </div>
                 {% empty %}
-                <h4>No businesses yet! Register one <a href="#">here</a></h4>
+                <h4>No businesses yet!</h4>
                 {% endfor %}
+                <h5>Register business <a href="{% url 'add_business' %}">here</a></h5>
             </div>
 
             <div class="col-md-3">
