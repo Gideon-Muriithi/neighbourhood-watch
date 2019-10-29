@@ -8,6 +8,12 @@ urlpatterns = [
     path('create/profile/',views.create_profile, name='create-profile'),
     path('home/', views.home, name='home'),
     path('add/hood/', views.add_hood, name='add_hood'),
+    path('join_hood/<int:hood_id>', views.join_hood, name='join_hood'),
+    path('leave_hood/<int:hood_id>', views.leave_hood, name='leave_hood'),
+    path('add/business/', views.add_business, name='add_business'),
+    path('add/post/', views.add_post, name='add_post'),
+    path('user/<username>', views.user_profile, name='user_profile'),
+
 ]
 
 if settings.DEBUG:
